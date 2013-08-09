@@ -39,30 +39,26 @@ function func(n) {
 
   for (var i = 1; i < l; i++) {
     // across
-    if (i % d < d-2 && i % d > 0) {
-      if (i > 237 && i < 241) console.log('across('+i+') WRONG')
+    if (i % d < d-3 && i % d > 0) {
       p = n[i] * n[i+1] * n[i+2] * n[i+3]
       if (p > g) g = p, gi = i + ' across'
     }
     // down
     if (i < l - d*3) {
-      if (i == 400 || i == 380 || i == 360) console.log('down('+i+') WRONG')
-      // if (i == 337) console.log('down')
       p = n[i] * n[i+d] * n[i+2*d] * n[i+3*d]
       if (p > g) g = p, gi = i + ' down'
     }
-    // diagonal
-    if (i % d < d-2 && i % d > 0 && i < l - d*3) {
-      if (i > 237 && i < 241) console.log('diag('+i+') WRONG')
-      if (i == 390 || i == 370 || i == 350) console.log('diag('+i+') WRONG')
+    // diagonal R
+    if (i % d < d-3 && i % d > 0 && i < l - d*3) {
       p = n[i] * n[i+d+1] * n[i+2+2*d] * n[i+3+3*d]
       if (p > g) g = p, gi = i + ' diag'
-      // if (i == 337 || i == 316) {
-      //   console.log('('+i+')', n[i], n[i+d+1], n[i+2+2*d], n[i+3+3*d])
-      //   console.log('('+d+')', i, i+d+1, i+2+2*d, i+3+3*d)
-      // }
     }
 
+    // diagonal L
+    if (i % d > 3 && i < l - d*3) {
+      p = n[i] * n[i+d-1] * n[i+2*d-2] * n[i+3*d-3]
+      if (p > g) g = p
+    }
   }
 
   console.log(gi)

@@ -1,0 +1,21 @@
+{
+  "name": "euler",
+  "version": "0.0.0",
+  "description": "ProjectEuler solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikefrey/euler.git"
+  },
+  "author": "Mike Frey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikefrey/euler/issues"
+  },
+  "dependencies": {
+    "bignumber.js": "~1.1.0"
+  }
+}

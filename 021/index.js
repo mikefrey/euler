@@ -1,9 +1,9 @@
-var start = process.hrtime()
+var start = +new Date
 var n = func(100)
-var elapsed = process.hrtime(start)
+var time = +new Date - start
 
 console.log(n)
-console.log('\n' + elapsed[0]+'ms', elapsed[1]/1000+'us')
+console.log('\n'+time+'ms')
 
 function func(num) {
   var sum = 0

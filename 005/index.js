@@ -1,12 +1,12 @@
-var start = +new Date
-var n = smallestMultiple(20)
-var time = +new Date - start
+var start = process.hrtime()
+var n = func(20)
+var elapsed = process.hrtime(start)
 
 console.log(n)
-console.log('\n'+time+'ms')
+console.log('\n' + elapsed[0]+'ms', elapsed[1]/1000+'us')
 
 
-function smallestMultiple(num) {
+function func(num) {
   var n, i = 0
   while (i += num) {
     for (n = num-1; n > 1; n--) {

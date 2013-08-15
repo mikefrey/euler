@@ -7,7 +7,7 @@ import (
 
 func main() {
   start := time.Now()
-  result := run(1000)
+  result := run(4000000)
   elapsed := time.Since(start)
 
   fmt.Println(result)
@@ -16,10 +16,15 @@ func main() {
 
 func run(num int) (sum int) {
   sum = 0
-  for i := 0; i < 1000; i++ {
-    if i % 3 == 0 || i % 5 == 0 {
-      sum += i
+  n, p := 1, 0
+  var o int
+  for n < num {
+    if n % 2 == 0 {
+      sum += n
     }
+    o = n + p
+    p = n
+    n = o
   }
   return
 }

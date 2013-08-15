@@ -1,7 +1,12 @@
-var sum = 0
-fib(4000000)
+var start = process.hrtime()
+var n = func(4000000)
+var elapsed = process.hrtime(start)
 
-function fib(num) {
+console.log(n)
+console.log('\n' + elapsed[0]+'ms', elapsed[1]/1000+'us')
+
+function func(num) {
+  var sum = 0
   var n = 1, p = 0, o
   while (n < num) {
     if (n % 2 == 0) sum += n
@@ -9,6 +14,5 @@ function fib(num) {
     p = n
     n = o
   }
+  return sum
 }
-
-console.log(sum)

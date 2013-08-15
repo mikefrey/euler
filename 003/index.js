@@ -1,12 +1,10 @@
+var start = process.hrtime()
+func(600851475143)
+var elapsed = process.hrtime(start)
 
+console.log('\n' + elapsed[0]+'ms', elapsed[1]/1000+'us')
 
-var num = 600851475143
-// var num = 5959
-
-fermatFactor(num)
-
-
-function fermatFactor(N) {
+function func(N) {
   console.log('\n', N)
   var a = Math.ceil(Math.sqrt(N))
   var b2 = (a*a) - N
@@ -23,7 +21,7 @@ function fermatFactor(N) {
   console.log(x, 'or', y)
 
   if (x != 1 && y != 1) {
-    fermatFactor(y)
-    fermatFactor(x)
+    func(y)
+    func(x)
   }
 }
